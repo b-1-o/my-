@@ -7,11 +7,10 @@
 <meta name="description" content="A personal digital profile of Erik — tech, code, creativity, gaming and the things he's building.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
-
 :root{
   --bg:#08090b; --panel:rgba(255,255,255,.055); --panel2:rgba(255,255,255,.085);
   --text:#f4f4f5; --muted:#9699a3; --line:rgba(255,255,255,.1);
-  --accent:#fff; --radius:24px;
+  --accent:#fff; --radius:24px; --accent-color:#a5b4fc;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -34,6 +33,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:20;
 .logo{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.04em;padding:8px 12px}
 .navlinks{display:flex;gap:4px}.navlinks a{font-size:13px;color:#a9abb3;padding:8px 11px;border-radius:12px}
 .navlinks a:hover{background:var(--panel2);color:#fff}
+.navlinks a.active{color:#fff;font-weight:600}
 .hero{min-height:100vh;display:grid;place-items:center;padding:130px 0 80px}
 .hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:55px;align-items:center}
 .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:#8e919a;margin-bottom:18px}
@@ -75,7 +75,6 @@ footer{padding:80px 0 35px;border-top:1px solid var(--line);color:#666a73;font-s
     <a href="#about">About</a><a href="#interests">Interests</a><a href="#projects">Projects</a><a href="#mindset">Mindset</a>
   </div>
 </nav>
-
 <main id="top">
 <section class="hero">
   <div class="container hero-grid">
@@ -97,6 +96,7 @@ footer{padding:80px 0 35px;border-top:1px solid var(--line);color:#666a73;font-s
       <div class="card-row"><span class="label">BASE</span><span class="value">Los Angeles, CA</span></div>
       <div class="card-row"><span class="label">FOCUS</span><span class="value">Tech + AI + Code</span></div>
       <div class="card-row"><span class="label">CURRENT MODE</span><span class="value">Learning & building</span></div>
+      <div class="card-row"><span class="label">GAMES</span><span class="value">Valorant • Roblox • Dota 2 • Chess</span></div>
     </aside>
   </div>
 </section>
@@ -130,6 +130,12 @@ footer{padding:80px 0 35px;border-top:1px solid var(--line);color:#666a73;font-s
       <p>Landing pages and experiments with modern UI, forms, responsive layouts and clean visual systems.</p>
       <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Tailwind</span></div>
       <div class="mini">02 / BUILDING</div>
+    </article>
+    <article class="project">
+      <h3>Roblox Studio Projects</h3>
+      <p>Full games, tycoons, obbies and roleplay experiences built in Roblox Studio — fast iteration, scripting and creative problem-solving.</p>
+      <div class="tags"><span class="tag">Roblox</span><span class="tag">Studio</span><span class="tag">Luau</span><span class="tag">Game Dev</span></div>
+      <div class="mini">03 / GAMING</div>
     </article>
   </div>
 </div>
@@ -166,7 +172,6 @@ footer{padding:80px 0 35px;border-top:1px solid var(--line);color:#666a73;font-s
 </div>
 </section>
 </main>
-
 <footer class="container">
   <span>ERIK. / PERSONAL PROFILE</span>
   <span>© 2026 — Built around curiosity.</span>
