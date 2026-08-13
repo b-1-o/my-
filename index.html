@@ -224,7 +224,7 @@ section{padding:110px 0}
   letter-spacing:.04em;z-index:1;
 }
 
-/* ===== SKATE SECTION ===== */
+/* SKATE */
 .skate-story{
   max-width:720px;
   color:#a0a3ab;
@@ -233,7 +233,6 @@ section{padding:110px 0}
   margin-bottom:50px;
 }
 .skate-story p{margin-bottom:18px}
-.skate-story strong{color:#e4e4e7;font-weight:600}
 
 .skate-timeline{
   display:grid;
@@ -270,45 +269,41 @@ section{padding:110px 0}
   line-height:1.5;
 }
 
+/* BENTO GALLERY */
 .skate-gallery{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:200px;
+  gap:12px;
 }
 .photo{
-  aspect-ratio:4/5;
+  position:relative;
   border-radius:18px;
+  overflow:hidden;
   border:1px solid var(--line);
   background:#111;
-  position:relative;
-  overflow:hidden;
-  transition:all .4s ease;
+  transition:all .4s cubic-bezier(.2,.8,.2,1);
 }
 .photo:hover{
-  transform:translateY(-6px);
-  border-color:rgba(255,255,255,.2);
-  box-shadow:0 20px 50px rgba(0,0,0,.4);
-}
-.photo-inner{
-  width:100%;height:100%;
-  background:linear-gradient(145deg,#1a1b1e,#0d0e10);
-  display:grid;place-items:center;
-  color:#555;
-  font-size:13px;
-  letter-spacing:.05em;
+  transform:translateY(-5px);
+  border-color:rgba(255,255,255,.22);
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
 }
 .photo img{
-  width:100%;height:100%;
+  width:100%;
+  height:100%;
   object-fit:cover;
   filter:grayscale(100%) contrast(1.05);
   transition:all .5s ease;
+  display:block;
 }
 .photo:hover img{
-  filter:grayscale(80%) contrast(1.1);
-  transform:scale(1.03);
+  filter:grayscale(75%) contrast(1.1);
+  transform:scale(1.04);
 }
 .photo-caption{
-  position:absolute;bottom:0;left:0;right:0;
+  position:absolute;
+  bottom:0;left:0;right:0;
   padding:14px 16px;
   background:linear-gradient(to top,rgba(0,0,0,.85),transparent);
   font-size:12px;
@@ -317,6 +312,14 @@ section{padding:110px 0}
   transition:opacity .3s ease;
 }
 .photo:hover .photo-caption{opacity:1}
+
+.photo-hero{
+  grid-column:span 2;
+  grid-row:span 2;
+}
+.photo-wide{
+  grid-column:span 2;
+}
 
 .timeline{border-left:1px solid var(--line);margin-left:8px}
 .step{position:relative;padding:0 0 46px 32px}
@@ -355,7 +358,15 @@ footer{
 
 @media(max-width:900px){
   .skate-timeline{grid-template-columns:1fr 1fr}
-  .skate-gallery{grid-template-columns:1fr 1fr}
+  .skate-gallery{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:180px;
+  }
+  .photo-hero{
+    grid-column:span 2;
+    grid-row:span 2;
+  }
+  .photo-wide{grid-column:span 2}
 }
 @media(max-width:800px){
   .hero-grid,.projects{grid-template-columns:1fr}
@@ -365,7 +376,16 @@ footer{
   .navlinks{display:none}
 }
 @media(max-width:520px){
-  .grid,.skate-timeline,.skate-gallery{grid-template-columns:1fr}
+  .grid,.skate-timeline{grid-template-columns:1fr}
+  .skate-gallery{
+    grid-template-columns:1fr;
+    grid-auto-rows:240px;
+  }
+  .photo-hero,
+  .photo-wide{
+    grid-column:span 1;
+    grid-row:span 1;
+  }
   section{padding:80px 0}
   .section-head{display:block}
   .section-head p{margin-top:12px}
@@ -388,6 +408,7 @@ footer{
 </nav>
 
 <main id="top">
+
 <section class="hero">
   <div class="container hero-grid">
     <div>
@@ -459,7 +480,6 @@ footer{
 </div>
 </section>
 
-<!-- ========== SKATE SECTION ========== -->
 <section id="skate">
 <div class="container">
   <div class="section-head reveal">
@@ -497,36 +517,51 @@ footer{
     </div>
   </div>
 
+  <!-- BENTO GALLERY -->
   <div class="skate-gallery">
-    <div class="photo reveal">
-      <div class="photo-inner">Photo 01</div>
-      <!-- <img src="your-photo-1.jpg" alt="Skating"> -->
-      <div class="photo-caption">Early days</div>
+    <div class="photo photo-hero reveal">
+      <img src="skate-04.jpg" alt="Above the city">
+      <div class="photo-caption">Above the city</div>
     </div>
+
     <div class="photo reveal">
-      <div class="photo-inner">Photo 02</div>
-      <!-- <img src="your-photo-2.jpg" alt="Skating"> -->
-      <div class="photo-caption">Learning tricks</div>
+      <img src="skate-09.jpg" alt="Under the bridge">
+      <div class="photo-caption">Under the bridge</div>
     </div>
+
     <div class="photo reveal">
-      <div class="photo-inner">Photo 03</div>
-      <!-- <img src="your-photo-3.jpg" alt="Skating"> -->
+      <img src="skate-08.jpg" alt="High trick">
+      <div class="photo-caption">High trick</div>
+    </div>
+
+    <div class="photo photo-wide reveal">
+      <img src="skate-03.jpg" alt="The crew">
+      <div class="photo-caption">The crew</div>
+    </div>
+
+    <div class="photo reveal">
+      <img src="skate-01.jpg" alt="Worn boards">
+      <div class="photo-caption">Worn boards</div>
+    </div>
+
+    <div class="photo reveal">
+      <img src="skate-05.jpg" alt="Session">
       <div class="photo-caption">Session</div>
     </div>
-    <div class="photo reveal">
-      <div class="photo-inner">Photo 04</div>
-      <!-- <img src="your-photo-4.jpg" alt="Skating"> -->
-      <div class="photo-caption">Competition day</div>
+
+    <div class="photo photo-wide reveal">
+      <img src="skate-06.jpg" alt="Looking out">
+      <div class="photo-caption">Looking out</div>
     </div>
+
     <div class="photo reveal">
-      <div class="photo-inner">Photo 05</div>
-      <!-- <img src="your-photo-5.jpg" alt="Skating"> -->
-      <div class="photo-caption">Brand shoot</div>
+      <img src="skate-02.jpg" alt="Fresh setup">
+      <div class="photo-caption">Fresh setup</div>
     </div>
+
     <div class="photo reveal">
-      <div class="photo-inner">Photo 06</div>
-      <!-- <img src="your-photo-6.jpg" alt="Skating"> -->
-      <div class="photo-caption">Later sessions</div>
+      <img src="skate-07.jpg" alt="Boards pile">
+      <div class="photo-caption">Boards pile</div>
     </div>
   </div>
 </div>
@@ -615,6 +650,7 @@ footer{
   </div>
 </div>
 </section>
+
 </main>
 
 <footer class="container">
