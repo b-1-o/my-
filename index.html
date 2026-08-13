@@ -269,7 +269,7 @@ section{padding:110px 0}
   line-height:1.5;
 }
 
-/* ===== MASONRY GALLERY (лучше для смешанных фото) ===== */
+/* ===== GALLERY - более ровная раскладка ===== */
 .skate-gallery{
   columns: 3;
   column-gap: 14px;
@@ -303,6 +303,13 @@ section{padding:110px 0}
 .photo:hover img{
   filter: grayscale(70%) contrast(1.1);
   transform: scale(1.03);
+}
+
+/* Подрезаем слишком высокую фотку Opera */
+.photo.opera img{
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .photo-caption{
@@ -502,11 +509,13 @@ footer{
     </div>
   </div>
 
-  <!-- MASONRY GALLERY - фото почти не обрезаются -->
+  <!-- GALLERY - переставленный порядок + подрезанная Opera -->
   <div class="skate-gallery">
+
+    <!-- Левая колонка -->
     <div class="photo reveal">
-      <img src="skate-04.jpg" alt="Above the city">
-      <div class="photo-caption">Above the city</div>
+      <img src="skate-08.jpg" alt="High trick">
+      <div class="photo-caption">High trick</div>
     </div>
 
     <div class="photo reveal">
@@ -515,10 +524,11 @@ footer{
     </div>
 
     <div class="photo reveal">
-      <img src="skate-08.jpg" alt="High trick">
-      <div class="photo-caption">High trick</div>
+      <img src="skate-05.jpg" alt="Session">
+      <div class="photo-caption">Session</div>
     </div>
 
+    <!-- Средняя колонка -->
     <div class="photo reveal">
       <img src="skate-03.jpg" alt="The crew">
       <div class="photo-caption">The crew</div>
@@ -530,16 +540,12 @@ footer{
     </div>
 
     <div class="photo reveal">
-      <img src="skate-05.jpg" alt="Session">
-      <div class="photo-caption">Session</div>
-    </div>
-
-    <div class="photo reveal">
       <img src="skate-06.jpg" alt="Looking out">
       <div class="photo-caption">Looking out</div>
     </div>
 
-    <div class="photo reveal">
+    <!-- Правая колонка -->
+    <div class="photo opera reveal">
       <img src="skate-02.jpg" alt="Fresh setup">
       <div class="photo-caption">Fresh setup</div>
     </div>
@@ -548,6 +554,12 @@ footer{
       <img src="skate-07.jpg" alt="Boards pile">
       <div class="photo-caption">Boards pile</div>
     </div>
+
+    <div class="photo reveal">
+      <img src="skate-04.jpg" alt="Above the city">
+      <div class="photo-caption">Above the city</div>
+    </div>
+
   </div>
 </div>
 </section>
